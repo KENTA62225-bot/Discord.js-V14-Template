@@ -23,11 +23,11 @@ module.exports = {
 		if (type === 'general'){
 
 			const embed = new EmbedBuilder()
-		    .setTitle(`> Help`)
+			.setTitle(`> Help`)
 			.setDescription(`バグ、要望は下記に連絡してください。\nDiscord: KENTA62225#4137\nTwitter: @KENTA62225`)
-		    .setFooter({ text: `${interaction.client.user.tag}`, iconURL: `${interaction.client.user.displayAvatarURL()}`})
-		    .setTimestamp()
-	        .setColor(color);
+			.setFooter({ text: `${interaction.client.user.tag}`, iconURL: `${interaction.client.user.displayAvatarURL()}`})
+			.setTimestamp()
+			.setColor(color);
 
 			interaction.reply({ embeds: [embed] });
 
@@ -35,11 +35,11 @@ module.exports = {
 			const commands = await interaction.client.application.commands.fetch();
 
 			const embed = new EmbedBuilder()
-		    .setTitle(`> Help - Commands List [${commands.size}]`)
+		        .setTitle(`> Help - Commands List [${commands.size}]`)
 			.setDescription(commands.map(command => `${command.name} : ${command.description}`).sort().join(',\n'))
-		    .setFooter({ text: `${interaction.client.user.tag}`, iconURL: `${interaction.client.user.displayAvatarURL()}`})
-		    .setTimestamp()
-	        .setColor(color);
+		        .setFooter({ text: `${interaction.client.user.tag}`, iconURL: `${interaction.client.user.displayAvatarURL()}`})
+		        .setTimestamp()
+	                .setColor(color);
 
 			interaction.reply({ embeds: [embed] });
 
