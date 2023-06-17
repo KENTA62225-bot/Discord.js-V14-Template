@@ -29,7 +29,7 @@ const client = new Client({
 	]
 });
 
-//command
+//commandファイル読み込み
 client.commands = new Collection();
 const commandFolders = fs.readdirSync('./commands');
 for (const folder of commandFolders) {
@@ -40,7 +40,7 @@ for (const folder of commandFolders) {
   }
 }
 
-//event
+//eventファイル読み込み
 const eventFolders = fs.readdirSync('./events');
 for (const folder of eventFolders) {
 	const eventFiles = fs.readdirSync(`./events/${folder}`).filter(file => file.endsWith('.js'));
