@@ -13,7 +13,7 @@ module.exports = {
 		.setTitle(`> Server Info`)
 		.setDescription(`【 **__${interaction.guild.name}__** 】`)
 		.setThumbnail(interaction.guild.iconURL())
-	    .setFields(
+	        .setFields(
 			{ name: `-サーバーID`, value: `${interaction.guild.id}`},
 			{ name: `-サーバーオーナー`, value: `<@${interaction.guild.ownerId}>`},
 			{ name: `-サーバー作成日`, value: `${interaction.guild.createdAt.toLocaleString()}`},
