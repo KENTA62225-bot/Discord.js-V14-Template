@@ -24,7 +24,7 @@ module.exports = {
 		)
 		.setFooter({ text: `${interaction.client.user.tag}`, iconURL: `${interaction.client.user.displayAvatarURL()}`})
 		.setTimestamp()
-	    .setColor(color);
+	        .setColor(color);
 
 		return interaction.reply({ embeds: [embed] });
 	},
