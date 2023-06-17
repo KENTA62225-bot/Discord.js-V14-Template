@@ -5,23 +5,23 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('message')
 		.setDescription('埋め込みメッセージ')
-        .addStringOption(option => 
+                .addStringOption(option => 
 			option
 			.setName('message')
 			.setDescription('内容')
-            .setRequired(true)
+                        .setRequired(true)
 		)
 		.setDMPermission(false),
 
 	async execute(interaction) {
-        const message = interaction.options.getString('message');
+		const message = interaction.options.getString('message');
 
 		const embed = new EmbedBuilder()
 		.setDescription(`${message}`)
-        .setAuthor({ name: `${interaction.user.tag}`, iconURL: `${interaction.user.displayAvatarURL()}`})
+		.setAuthor({ name: `${interaction.user.tag}`, iconURL: `${interaction.user.displayAvatarURL()}`})
 		.setFooter({ text: `${interaction.client.user.tag}`, iconURL: `${interaction.client.user.displayAvatarURL()}`})
 		.setTimestamp()
-	    .setColor(color);
+		.setColor(color);
 
 		await interaction.reply({ embeds: [embed]})
 	}
