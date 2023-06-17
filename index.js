@@ -1,5 +1,5 @@
 const fs = require('node:fs');
-const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
+const { Client, Collection, GatewayIntentBits, Partials } = require('discord.js');
 const { token } = require('./config.json');
 const client = new Client({
 	intents: [
@@ -21,10 +21,15 @@ const client = new Client({
 		GatewayIntentBits.GuildVoiceStates,
 		GatewayIntentBits.GuildWebhooks,
 		GatewayIntentBits.Guilds,
-		GatewayIntentBits.MessageContent
+		GatewayIntentBits.MessageContent,
+	],
+	partials: [
+		Partials.Channel,
+		Partials.Message
 	]
 });
 
+//command
 client.commands = new Collection();
 const commandFolders = fs.readdirSync('./commands');
 for (const folder of commandFolders) {
@@ -35,23 +40,15 @@ for (const folder of commandFolders) {
   }
 }
 
-client.on(Events.InteractionCreate, async interaction => {
-	if (!interaction.isChatInputCommand()) return;
-
-	const command = client.commands.get(interaction.commandName);
-
-	if (!command) return;
-
-	try {
-		await command.execute(interaction);
-	} catch (error) {
-		console.error(error);
-		await interaction.reply({ content: 'エラーが発生したためコマンドを実行することができませんでした。', ephemeral: true });
+//event
+const eventFolders = fs.readdirSync('./events');
+for (const folder of eventFolders) {
+	const eventFiles = fs.readdirSync(`./events/${folder}`).filter(file => file.endsWith('.js'));
+	for (const file of eventFiles) {
+		const events = require(`./events/${folder}/${file}`);
+		events(client);
 	}
-});
+}
 
-const systems = require('./events/systems.js');
-systems(client);
-
-
+//login
 client.login(token);
