@@ -24,7 +24,7 @@ module.exports = {
 
 			const embed = new EmbedBuilder()
 			.setTitle(`> Help`)
-			.setDescription(`バグ、要望は下記に連絡してください。\nDiscord: KENTA62225#4137\nTwitter: @KENTA62225`)
+			.setDescription(`連絡先など記入`)
 			.setFooter({ text: `${interaction.client.user.tag}`, iconURL: `${interaction.client.user.displayAvatarURL()}`})
 			.setTimestamp()
 			.setColor(color);
