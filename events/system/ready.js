@@ -1,4 +1,4 @@
-const { EmbedBuilder, Events } = require('discord.js');
+const { Events } = require('discord.js');
 
 module.exports = function ready(client) {
     client.once(Events.ClientReady, () => {
