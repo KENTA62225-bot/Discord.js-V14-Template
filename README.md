@@ -20,7 +20,7 @@
 
 > 報告、連絡、相談
 
-・Discord: @KENTA62225
+・Discord: @kenta62225
 
 ・Twitter: [@KENTA62225](https://twitter.com/KENTA62225)
 
