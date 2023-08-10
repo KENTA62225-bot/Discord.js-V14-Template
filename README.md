@@ -18,9 +18,9 @@
 ・`node undeploy.js` でコマンドの登録を解除
 
 
-> 報告、連絡、相談
+> その他
 
-・Discord: @kenta62225
+・Discord: [@kenta62225](https://discord.gg/3PQ28U8MjW)
 
 ・Twitter: [@KENTA62225](https://twitter.com/KENTA62225)
 
