@@ -23,3 +23,5 @@
 ・Discord: @kenta62225
 
 ・Twitter: [@KENTA62225](https://twitter.com/KENTA62225)
+
+・[Bot招待リンク](https://discord.com/api/oauth2/authorize?client_id=1021747490434842734&permissions=8&scope=applications.commands%20bot)
