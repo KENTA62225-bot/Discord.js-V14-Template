@@ -23,5 +23,3 @@
 ・Discord: @kenta62225
 
 ・Twitter: [@KENTA62225](https://twitter.com/KENTA62225)
-
-(DiscordのDM推奨)
